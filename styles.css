@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-    background: linear-gradient(135deg, #18122B 0%, #2D1B4A 100%);
+    background: linear-gradient(135deg, #18122B 0%, #22223B 100%);
     min-height: 100vh;
     height: 100vh;
     width: 100vw;
@@ -22,120 +22,117 @@ body {
 
 .container {
     text-align: center;
-    padding: 32px 20px 20px 20px;
-    background: rgba(24, 18, 43, 0.85);
-    border-radius: 36px;
-    box-shadow: 0 8px 48px 0 rgba(80, 40, 180, 0.25), 0 1.5px 8px 0 rgba(255,255,255,0.04);
-    backdrop-filter: blur(6px);
-    max-width: 95vw;
+    padding: 24px 8px 32px 8px;
+    width: 100vw;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .logo {
-    width: 300px;
-    height: 300px;
+    width: 220px;
+    height: 220px;
     object-fit: contain;
-    margin-bottom: 48px;
-    filter: drop-shadow(0 0 32px #fff8) drop-shadow(0 0 64px #a084ca44);
-}
-
-.glow {
-    color: #fff;
-    text-shadow: 0 0 16px #fff, 0 0 32px #fff, 0 0 64px #a084ca, 0 0 4px #fff;
-    animation: shimmer 2.5s infinite linear;
-}
-
-@keyframes shimmer {
-    0% { text-shadow: 0 0 16px #fff, 0 0 32px #fff, 0 0 64px #a084ca, 0 0 4px #fff; }
-    50% { text-shadow: 0 0 32px #fff, 0 0 64px #fff, 0 0 128px #a084ca, 0 0 8px #fff; }
-    100% { text-shadow: 0 0 16px #fff, 0 0 32px #fff, 0 0 64px #a084ca, 0 0 4px #fff; }
-}
-
-h1 {
-    font-size: 5.2rem;
     margin-bottom: 32px;
-    font-weight: 900;
-    letter-spacing: 4px;
-    font-family: 'Montserrat', 'Poppins', 'Segoe UI', 'Arial', sans-serif;
+    filter: drop-shadow(0 0 32px #fff2) drop-shadow(0 0 8px #fff1);
+    border-radius: 32px;
+    background: rgba(255,255,255,0.01);
 }
 
-.countdown-container {
-    margin-bottom: 36px;
-}
-
-.countdown-label {
+.brand-glow {
     color: #fff;
-    font-size: 2.1rem;
-    font-weight: 600;
-    margin-bottom: 18px;
-    letter-spacing: 2px;
-    text-shadow: 0 0 8px #fff, 0 0 24px #a084ca;
-}
-
-.countdown-timer {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    font-size: 3.6rem;
+    font-size: 3.2rem;
     font-weight: 800;
-    letter-spacing: 3px;
-    margin-bottom: 0;
-    margin-top: 0;
+    letter-spacing: 4px;
+    margin-bottom: 32px;
+    text-shadow: 0 0 16px #fff, 0 0 32px #fff8, 0 0 2px #fff;
+    font-family: 'Montserrat', 'Poppins', 'Segoe UI', 'Arial', sans-serif;
 }
 
-.countdown-timer span {
-    display: inline-block;
-    min-width: 80px;
-    text-align: center;
+.countdown-glow {
     color: #fff;
-    text-shadow: 0 0 16px #fff, 0 0 32px #fff, 0 0 64px #a084ca, 0 0 4px #fff;
-    font-family: 'Montserrat', 'Poppins', 'Segoe UI', 'Arial', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    margin-bottom: 48px;
+    text-shadow: 0 0 18px #fff, 0 0 32px #fff8, 0 0 2px #fff;
+    font-family: 'Poppins', 'Montserrat', 'Segoe UI', 'Arial', sans-serif;
+    animation: glowPulse 2.5s infinite alternate;
+    user-select: none;
+}
+
+@keyframes glowPulse {
+    0% { text-shadow: 0 0 18px #fff, 0 0 32px #fff8, 0 0 2px #fff; }
+    100% { text-shadow: 0 0 32px #fff, 0 0 64px #fff8, 0 0 4px #fff; }
+}
+
+.telegram-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    padding: 14px 32px;
+    background: #229ED9;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 32px;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(34,158,217,0.10);
+    transition: background 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+.telegram-btn:hover {
+    background: #1b8bb7;
+    box-shadow: 0 4px 18px rgba(34,158,217,0.18);
+}
+.telegram-logo {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
 }
 
 .telegram-link {
     display: inline-block;
-    margin-top: 48px;
+    margin-top: 16px;
     color: #fff;
-    font-size: 2.2rem;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 600;
     letter-spacing: 2px;
     text-decoration: none;
-    border-bottom: 2px dashed #fff;
-    text-shadow: 0 0 8px #fff, 0 0 24px #a084ca;
+    border-bottom: 2px dashed #fff8;
+    text-shadow: 0 0 8px #fff, 0 0 2px #fff;
     transition: color 0.2s, border-bottom 0.2s, text-shadow 0.2s;
 }
 .telegram-link:hover {
-    color: #a084ca;
-    border-bottom: 2px solid #a084ca;
-    text-shadow: 0 0 24px #fff, 0 0 48px #a084ca;
+    color: #229ED9;
+    border-bottom: 2px solid #229ED9;
+    text-shadow: 0 0 16px #229ED9, 0 0 2px #229ED9;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
     .logo {
-        width: 180px;
-        height: 180px;
-        margin-bottom: 32px;
+        width: 150px;
+        height: 150px;
+        margin-bottom: 24px;
     }
-    h1 {
-        font-size: 2.6rem;
+    .brand-glow {
+        font-size: 2.1rem;
         margin-bottom: 18px;
     }
-    .countdown-label {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-    }
-    .countdown-timer {
+    .countdown-glow {
         font-size: 1.6rem;
-        gap: 12px;
-    }
-    .countdown-timer span {
-        min-width: 38px;
+        margin-bottom: 32px;
     }
     .telegram-link {
-        font-size: 1.2rem;
-        margin-top: 24px;
+        font-size: 1.1rem;
     }
     .container {
-        padding: 16px 4px 8px 4px;
-        border-radius: 18px;
+        padding: 12px 2px 18px 2px;
     }
 } 
