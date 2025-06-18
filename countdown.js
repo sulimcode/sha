@@ -1,19 +1,17 @@
-function pad(n) {
-    return n < 10 ? '0' + n : n;
-}
+// Countdown target (set your real opening date/time here)
+const targetDate = new Date();
+targetDate.setDate(targetDate.getDate() + 7); // 7 days from now
 
-function updateCountdown() {
-    // Target date: June 22, current year, 00:00:00 local time
+timer();
+setInterval(timer, 1000);
+
+function timer() {
     const now = new Date();
-    const year = now.getMonth() > 5 || (now.getMonth() === 5 && now.getDate() > 22) ? now.getFullYear() + 1 : now.getFullYear();
-    const target = new Date(year, 5, 22, 0, 0, 0, 0);
-    let diff = target - now;
-    if (diff < 0) diff = 0;
-    const hours = pad(Math.floor(diff / (1000 * 60 * 60)));
-    const minutes = pad(Math.floor((diff / (1000 * 60)) % 60));
-    const seconds = pad(Math.floor((diff / 1000) % 60));
+    let diff = Math.max(0, targetDate - now);
+    const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+    diff %= (1000 * 60 * 60);
+    const minutes = String(Math.floor(diff / (1000 * 60))).padStart(2, '0');
+    diff %= (1000 * 60);
+    const seconds = String(Math.floor(diff / 1000)).padStart(2, '0');
     document.getElementById('countdown').textContent = `${hours}:${minutes}:${seconds}`;
-}
-
-updateCountdown();
-setInterval(updateCountdown, 1000); 
+} 
