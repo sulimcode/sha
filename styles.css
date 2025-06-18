@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-    background: linear-gradient(135deg, #18122B 0%, #22223B 100%);
+    background: linear-gradient(135deg, #18122B 0%, #2D1B4A 100%);
     min-height: 100vh;
     height: 100vh;
     width: 100vw;
@@ -25,7 +25,7 @@ body {
     padding: 32px 20px 20px 20px;
     background: rgba(24, 18, 43, 0.85);
     border-radius: 36px;
-    box-shadow: 0 8px 48px 0 rgba(34,34,59,0.45), 0 1.5px 8px 0 rgba(255,255,255,0.04) inset;
+    box-shadow: 0 8px 48px 0 rgba(80, 40, 180, 0.25), 0 1.5px 8px 0 rgba(255,255,255,0.04);
     backdrop-filter: blur(6px);
     max-width: 95vw;
 }
@@ -35,89 +35,107 @@ body {
     height: 300px;
     object-fit: contain;
     margin-bottom: 48px;
-    filter: drop-shadow(0 0 32px #fff8) drop-shadow(0 0 8px #fff4);
+    filter: drop-shadow(0 0 32px #fff8) drop-shadow(0 0 64px #a084ca44);
+}
+
+.glow {
+    color: #fff;
+    text-shadow: 0 0 16px #fff, 0 0 32px #fff, 0 0 64px #a084ca, 0 0 4px #fff;
+    animation: shimmer 2.5s infinite linear;
+}
+
+@keyframes shimmer {
+    0% { text-shadow: 0 0 16px #fff, 0 0 32px #fff, 0 0 64px #a084ca, 0 0 4px #fff; }
+    50% { text-shadow: 0 0 32px #fff, 0 0 64px #fff, 0 0 128px #a084ca, 0 0 8px #fff; }
+    100% { text-shadow: 0 0 16px #fff, 0 0 32px #fff, 0 0 64px #a084ca, 0 0 4px #fff; }
 }
 
 h1 {
-    color: #fff;
-    font-size: 4.8rem;
+    font-size: 5.2rem;
     margin-bottom: 32px;
     font-weight: 900;
     letter-spacing: 4px;
     font-family: 'Montserrat', 'Poppins', 'Segoe UI', 'Arial', sans-serif;
-    text-shadow: 0 0 18px #fff, 0 0 48px #fff8;
 }
 
-.countdown {
-    color: #fff;
-    font-size: 3.2rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 40px;
-    text-shadow: 0 0 16px #fff, 0 0 32px #fff8;
-    font-family: 'Poppins', 'Montserrat', 'Segoe UI', 'Arial', sans-serif;
+.countdown-container {
+    margin-bottom: 36px;
 }
 
-.telegram-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 40px;
-    padding: 14px 32px;
-    background: #229ED9;
+.countdown-label {
     color: #fff;
-    font-size: 1.6rem;
+    font-size: 2.1rem;
     font-weight: 600;
-    border: none;
-    border-radius: 32px;
-    text-decoration: none;
-    box-shadow: 0 2px 12px rgba(34,158,217,0.10);
-    transition: background 0.2s, box-shadow 0.2s;
-    cursor: pointer;
+    margin-bottom: 18px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px #fff, 0 0 24px #a084ca;
 }
-.telegram-btn:hover {
-    background: #1b8bb7;
-    box-shadow: 0 4px 18px rgba(34,158,217,0.18);
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    font-size: 3.6rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+    margin-top: 0;
 }
-.telegram-logo {
-    width: 28px;
-    height: 28px;
+
+.countdown-timer span {
     display: inline-block;
+    min-width: 80px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 16px #fff, 0 0 32px #fff, 0 0 64px #a084ca, 0 0 4px #fff;
+    font-family: 'Montserrat', 'Poppins', 'Segoe UI', 'Arial', sans-serif;
 }
 
 .telegram-link {
     display: inline-block;
-    margin-top: 40px;
+    margin-top: 48px;
     color: #fff;
     font-size: 2.2rem;
     font-weight: 700;
     letter-spacing: 2px;
     text-decoration: none;
     border-bottom: 2px dashed #fff;
+    text-shadow: 0 0 8px #fff, 0 0 24px #a084ca;
     transition: color 0.2s, border-bottom 0.2s, text-shadow 0.2s;
-    text-shadow: 0 0 12px #fff, 0 0 32px #fff8;
 }
 .telegram-link:hover {
-    color: #229ED9;
-    border-bottom: 2px solid #229ED9;
-    text-shadow: 0 0 24px #229ED9, 0 0 48px #229ED9;
+    color: #a084ca;
+    border-bottom: 2px solid #a084ca;
+    text-shadow: 0 0 24px #fff, 0 0 48px #a084ca;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     .logo {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
+        margin-bottom: 32px;
     }
     h1 {
-        font-size: 2.2rem;
+        font-size: 2.6rem;
+        margin-bottom: 18px;
     }
-    .countdown {
-        font-size: 1.4rem;
+    .countdown-label {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    .countdown-timer {
+        font-size: 1.6rem;
+        gap: 12px;
+    }
+    .countdown-timer span {
+        min-width: 38px;
     }
     .telegram-link {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        margin-top: 24px;
     }
     .container {
         padding: 16px 4px 8px 4px;
+        border-radius: 18px;
     }
 } 

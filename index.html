@@ -10,26 +10,13 @@
 <body>
     <div class="container">
         <img src="crystal.png" alt="Shardes Logo" class="logo">
-        <h1>Shardes</h1>
-        <div class="countdown" id="countdown"></div>
+        <h1 class="glow">Shardes</h1>
+        <div class="countdown-container">
+            <div class="countdown-label">До открытия осталось</div>
+            <div id="countdown" class="countdown-timer glow"></div>
+        </div>
         <a href="https://t.me/shrades_channel" class="telegram-link" target="_blank">@shardes_channel</a>
     </div>
-    <script>
-    // Countdown to June 22, 00:00:00
-    const targetDate = new Date(new Date().getFullYear(), 5, 22, 0, 0, 0); // June is month 5 (0-indexed)
-    const countdownEl = document.getElementById('countdown');
-    function updateCountdown() {
-        const now = new Date();
-        let diff = targetDate - now;
-        if (diff < 0) diff = 0;
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
-        countdownEl.innerHTML = `До открытия: <span>${days}</span> д <span>${hours}</span> ч <span>${minutes}</span> м <span>${seconds}</span> с`;
-    }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-    </script>
+    <script src="countdown.js"></script>
 </body>
 </html> 
