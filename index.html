@@ -11,8 +11,26 @@
     <div class="container">
         <img src="crystal.png" alt="Shardes Logo" class="logo">
         <h1>Shardes</h1>
-        <p class="coming-soon">opening soon...</p>
-        <a href="https://t.me/shardes_channel" class="telegram-link" target="_blank">@shardes_channel</a>
+        <div id="countdown" class="countdown"></div>
+        <a href="https://t.me/shrades_channel" class="telegram-link" target="_blank">@shardes_channel</a>
     </div>
+    <script>
+    // Countdown to June 22, 00:00:00
+    const countdown = document.getElementById('countdown');
+    function updateCountdown() {
+        const now = new Date();
+        const target = new Date(now.getFullYear(), 5, 22, 0, 0, 0); // June is month 5 (0-indexed)
+        if (now > target) {
+            target.setFullYear(target.getFullYear() + 1);
+        }
+        const diff = target - now;
+        const hours = String(Math.floor(diff / 1000 / 60 / 60)).padStart(2, '0');
+        const minutes = String(Math.floor(diff / 1000 / 60) % 60).padStart(2, '0');
+        const seconds = String(Math.floor(diff / 1000) % 60).padStart(2, '0');
+        countdown.textContent = `${hours}:${minutes}:${seconds}`;
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html> 
