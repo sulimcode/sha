@@ -10,7 +10,8 @@ html, body {
 }
 
 body {
-    background-color: #875A91; /* Updated background color */
+    /* Luxury dark gradient background */
+    background: linear-gradient(135deg, #18122B 0%, #2D1B46 100%);
     min-height: 100vh;
     height: 100vh;
     width: 100vw;
@@ -32,10 +33,10 @@ body {
     height: 300px;
     object-fit: contain;
     margin-bottom: 48px;
-    filter: drop-shadow(0 8px 32px rgba(0,0,0,0.18));
+    filter: drop-shadow(0 8px 32px rgba(0,0,0,0.28));
     border-radius: 32px;
-    background: rgba(255,255,255,0.02);
-    box-shadow: 0 8px 40px 0 rgba(80, 40, 100, 0.18), 0 1.5px 8px 0 rgba(255,255,255,0.08) inset;
+    background: rgba(255,255,255,0.01);
+    box-shadow: 0 8px 40px 0 rgba(24, 18, 43, 0.28), 0 1.5px 8px 0 rgba(255,255,255,0.04) inset;
 }
 
 h1 {
@@ -45,17 +46,21 @@ h1 {
     font-weight: 900;
     letter-spacing: 4px;
     font-family: 'Montserrat', 'Poppins', 'Segoe UI', 'Arial', sans-serif;
-    text-shadow: 0 2px 24px rgba(80,40,100,0.18), 0 1.5px 8px rgba(255,255,255,0.08) inset;
+    text-shadow: 0 2px 24px rgba(24,18,43,0.28), 0 1.5px 8px rgba(255,255,255,0.08) inset;
 }
 
-.coming-soon {
-    color: #F3E9FF;
-    font-size: 3.2rem;
-    font-weight: 700;
-    letter-spacing: 6px;
+.countdown {
+    color: #E9D7FF;
+    font-size: 3.4rem;
+    font-weight: 800;
+    letter-spacing: 8px;
     margin-bottom: 64px;
     font-family: 'Poppins', 'Montserrat', 'Segoe UI', 'Arial', sans-serif;
-    text-shadow: 0 2px 24px rgba(80,40,100,0.18), 0 1.5px 8px rgba(255,255,255,0.08) inset;
+    text-shadow: 0 4px 32px #7B4AE2, 0 2px 24px rgba(24,18,43,0.28);
+    background: linear-gradient(90deg, #7B4AE2 0%, #E9D7FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .telegram-btn {
