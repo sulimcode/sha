@@ -6,14 +6,18 @@
 
 html, body {
     height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
 }
 
 body {
-    background: linear-gradient(135deg, #18122B 0%, #22223B 100%);
     min-height: 100vh;
+    min-width: 100vw;
     height: 100vh;
     width: 100vw;
+    background: linear-gradient(135deg, #18122B 0%, #2D1B4A 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,118 +25,102 @@ body {
 }
 
 .container {
-    text-align: center;
-    padding: 24px 8px 32px 8px;
     width: 100vw;
-    max-width: 420px;
-    margin: 0 auto;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .logo {
-    width: 220px;
-    height: 220px;
+    width: 320px;
+    height: 320px;
+    max-width: 80vw;
+    max-height: 32vh;
     object-fit: contain;
-    margin-bottom: 32px;
-    filter: drop-shadow(0 0 32px #fff2) drop-shadow(0 0 8px #fff1);
-    border-radius: 32px;
-    background: rgba(255,255,255,0.01);
+    margin-bottom: 36px;
+    filter: drop-shadow(0 0 32px #fff3) drop-shadow(0 0 64px #875A91);
 }
 
-.brand-glow {
+.glow {
     color: #fff;
-    font-size: 3.2rem;
-    font-weight: 800;
-    letter-spacing: 4px;
-    margin-bottom: 32px;
-    text-shadow: 0 0 16px #fff, 0 0 32px #fff8, 0 0 2px #fff;
-    font-family: 'Montserrat', 'Poppins', 'Segoe UI', 'Arial', sans-serif;
+    text-shadow:
+        0 0 12px #fff,
+        0 0 32px #fff,
+        0 0 64px #875A91,
+        0 0 128px #fff2;
 }
 
-.countdown-glow {
-    color: #fff;
-    font-size: 2.8rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    margin-bottom: 48px;
-    text-shadow: 0 0 18px #fff, 0 0 32px #fff8, 0 0 2px #fff;
+h1.glow {
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin-bottom: 32px;
+    letter-spacing: 0.12em;
+    line-height: 1.1;
+}
+
+.countdown.glow {
     font-family: 'Poppins', 'Montserrat', 'Segoe UI', 'Arial', sans-serif;
-    animation: glowPulse 2.5s infinite alternate;
-    user-select: none;
-}
-
-@keyframes glowPulse {
-    0% { text-shadow: 0 0 18px #fff, 0 0 32px #fff8, 0 0 2px #fff; }
-    100% { text-shadow: 0 0 32px #fff, 0 0 64px #fff8, 0 0 4px #fff; }
-}
-
-.telegram-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 40px;
-    padding: 14px 32px;
-    background: #229ED9;
-    color: #fff;
-    font-size: 1.6rem;
-    font-weight: 600;
-    border: none;
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    margin-bottom: 48px;
+    padding: 18px 36px;
     border-radius: 32px;
-    text-decoration: none;
-    box-shadow: 0 2px 12px rgba(34,158,217,0.10);
-    transition: background 0.2s, box-shadow 0.2s;
-    cursor: pointer;
-}
-.telegram-btn:hover {
-    background: #1b8bb7;
-    box-shadow: 0 4px 18px rgba(34,158,217,0.18);
-}
-.telegram-logo {
-    width: 28px;
-    height: 28px;
+    background: rgba(24, 18, 43, 0.7);
+    box-shadow: 0 0 32px #875A91cc, 0 0 64px #fff2;
     display: inline-block;
+    min-width: 320px;
 }
 
-.telegram-link {
+.telegram-link.glow {
     display: inline-block;
-    margin-top: 16px;
     color: #fff;
-    font-size: 1.4rem;
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     text-decoration: none;
     border-bottom: 2px dashed #fff8;
-    text-shadow: 0 0 8px #fff, 0 0 2px #fff;
+    padding: 10px 0 2px 0;
+    margin-top: 24px;
     transition: color 0.2s, border-bottom 0.2s, text-shadow 0.2s;
+    text-shadow:
+        0 0 8px #fff,
+        0 0 24px #875A91,
+        0 0 32px #fff2;
 }
-.telegram-link:hover {
-    color: #229ED9;
-    border-bottom: 2px solid #229ED9;
-    text-shadow: 0 0 16px #229ED9, 0 0 2px #229ED9;
+.telegram-link.glow:hover {
+    color: #875A91;
+    border-bottom: 2px solid #fff;
+    text-shadow:
+        0 0 16px #fff,
+        0 0 32px #875A91,
+        0 0 64px #fff2;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .logo {
-        width: 150px;
-        height: 150px;
+        width: 60vw;
+        height: 60vw;
+        max-height: 32vh;
         margin-bottom: 24px;
     }
-    .brand-glow {
-        font-size: 2.1rem;
+    h1.glow {
+        font-size: 2.6rem;
         margin-bottom: 18px;
     }
-    .countdown-glow {
-        font-size: 1.6rem;
+    .countdown.glow {
+        font-size: 2.1rem;
+        min-width: 180px;
         margin-bottom: 32px;
+        padding: 12px 10vw;
     }
-    .telegram-link {
-        font-size: 1.1rem;
-    }
-    .container {
-        padding: 12px 2px 18px 2px;
+    .telegram-link.glow {
+        font-size: 1.2rem;
+        margin-top: 16px;
     }
 } 
