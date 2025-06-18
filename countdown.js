@@ -1,6 +1,7 @@
-// Countdown target (set your real opening date/time here)
-const targetDate = new Date();
-targetDate.setDate(targetDate.getDate() + 7); // 7 days from now
+// Countdown target: June 22 of the current year at 00:00:00
+const now = new Date();
+const year = now.getMonth() > 5 ? now.getFullYear() + 1 : now.getFullYear(); // If after June, set for next year
+const targetDate = new Date(year, 5, 22, 0, 0, 0, 0); // June is month 5 (0-indexed)
 
 timer();
 setInterval(timer, 1000);
