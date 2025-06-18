@@ -1,23 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shardes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <img src="crystal.png" alt="Shardes Logo" class="logo">
         <h1>Shardes</h1>
         <div class="countdown" id="countdown"></div>
         <a href="https://t.me/shrades_channel" class="telegram-link" target="_blank">@shardes_channel</a>
-        <script>
-        // Countdown to June 22
-        function updateCountdown() {
-            const target = new Date(new Date().getFullYear(), 5, 22, 0, 0, 0, 0); // June is month 5 (0-indexed)
-            const now = new Date();
-            let diff = target - now;
-            if (diff < 0) diff = 0;
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const minutes = Math.floor((diff / (1000 * 60)) % 60);
-            const seconds = Math.floor((diff / 1000) % 60);
-            document.getElementById('countdown').innerHTML =
-                days + 'd ' +
-                String(hours).padStart(2, '0') + 'h ' +
-                String(minutes).padStart(2, '0') + 'm ' +
-                String(seconds).padStart(2, '0') + 's';
-        }
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-        </script> 
+    </div>
+    <script>
+    // Countdown to June 22, 00:00:00
+    const targetDate = new Date(new Date().getFullYear(), 5, 22, 0, 0, 0); // June is month 5 (0-indexed)
+    const countdownEl = document.getElementById('countdown');
+    function updateCountdown() {
+        const now = new Date();
+        let diff = targetDate - now;
+        if (diff < 0) diff = 0;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        countdownEl.innerHTML = `До открытия: <span>${days}</span> д <span>${hours}</span> ч <span>${minutes}</span> м <span>${seconds}</span> с`;
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html> 
